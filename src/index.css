@@ -1,0 +1,249 @@
+
+body {
+  margin: 0;
+  padding: 10px;
+  background-color: pink;
+  background: radial-gradient(circle at top, #ffd1dc, #ffb6c1, #ff9aa2);
+  overflow: hidden;
+  font-family: 'Pacifico', cursive;
+}
+
+h1 {
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+p {
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+button {
+  font-weight: 500;
+}
+
+
+@keyframes flyHearts {
+  0% {
+    transform: translateY(0) rotate(-45deg) scale(0.6);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(-45deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.heart {
+  position: absolute;
+  bottom: -60px; 
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff5f8f, #ff2d55);
+  transform: rotate(-45deg);
+  animation: flyHearts 6s linear infinite;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.15);
+  }
+}
+
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -25px;
+  left: 0;
+}
+
+.heart::after {
+  left: 25px;
+  top: 0;
+}
+
+.heart.small {
+  width: 25px;
+  height: 25px;
+  opacity: 0.4;
+  filter: blur(1px);
+}
+
+.heart.small::before,
+.heart.small::after {
+  width: 25px;
+  height: 25px;
+}
+
+.heart.small::before {
+  top: -12.5px;
+}
+
+.heart.small::after {
+  left: 12.5px;
+}
+
+.heart.medium {
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+}
+
+.heart.large {
+  width: 65px;
+  height: 65px;
+  opacity: 0.85;
+}
+
+.hearts-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart:nth-child(1) {
+  left: 15%;
+  animation-duration: 5s;
+}
+
+.heart:nth-child(2) {
+  left: 35%;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+  left: 55%;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+  left: 75%;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+
+
+.buttons-container {
+  position: relative;
+  margin-top: 40px;
+  height: 200px;
+}
+
+button {
+  padding: 14px 32px;
+  font-size: 1.2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+/* YES button */
+.yes-btn {
+  background: linear-gradient(135deg, #ff5f8f, #ff2d55);
+  color: white;
+  box-shadow: 0 10px 25px rgba(255, 45, 85, 0.4);
+}
+
+.yes-btn:hover {
+  transform: scale(1.15);
+}
+
+/* NO button */
+.no-btn {
+  position: absolute;
+  background: #fff;
+  color: #ff2d55;
+  border: 2px solid #ff2d55;
+  top: 50%;
+  left: 55%;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.typing-text {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.typing-text::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.final-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  z-index: 100;
+}
+
+.final-screen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.final-screen p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
+.share-btn {
+  padding: 14px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #ff4d6d;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+
