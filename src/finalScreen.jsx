@@ -58,7 +58,7 @@ export default function FinalScreen() {
         className="share-btn"
         onClick={() => navigator.clipboard.writeText("I said YES 💕")}
       >
-        Copy Proof 😏
+        Love you baby
       </button>
     </div>
   );
